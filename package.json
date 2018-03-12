@@ -1,10 +1,11 @@
 {
-  "name": "crypto",
+  "name": "cryptography",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "node ./test",
+    "start": "node ./test",
+    "test": "node ./test -- -v",
     "test:slow": "RUNS=100000 node ./test"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
