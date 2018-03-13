@@ -1,11 +1,15 @@
 const { run } = require('test')
 
-const randomBytes = require('./randomBytes')
-const randomNumber = require('./randomNumber')
+const hash = require('./hash')
+const randomBytes = require('./random/bytes')
+const randomNumber = require('./random/number')
 
 const tests = {
-  randomBytes,
-  randomNumber,
+  hash,
+  random: {
+    bytes: randomBytes,
+    number: randomNumber,
+  },
 }
 
 run(tests)

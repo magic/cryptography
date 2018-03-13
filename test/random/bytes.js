@@ -1,6 +1,6 @@
 const { isString, isError } = require('types')
 
-const { randomBytes } = require('../src')
+const { randomBytes } = require('../../src')
 
 const runs = process.env.RUNS || 100
 

@@ -1,6 +1,6 @@
 const { isNumber } = require('types')
 
-const { randomNumber } = require('../src')
+const { randomNumber } = require('../../src')
 
 const runs = process.env.RUNS || 100
 const max = 281474976710654
