@@ -11,5 +11,8 @@
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "devDependencies": {
     "test": "file:../test"
+  },
+  "dependencies": {
+    "types": "file:../types"
   }
 }
