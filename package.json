@@ -6,13 +6,14 @@
   "scripts": {
     "start": "node ./test",
     "test": "node ./test -- -v",
-    "test:slow": "RUNS=100000 node ./test"
+    "test:slow": "RUNS=10000 node ./test"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "devDependencies": {
     "test": "file:../test"
   },
   "dependencies": {
+    "bcrypt": "1.0.3",
     "types": "file:../types"
   }
 }
