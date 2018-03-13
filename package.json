@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./test",
     "test": "node ./test -- -v",
-    "test:slow": "RUNS=10000 node ./test"
+    "test:slow": "RUNS=5000 node ./test -- -v"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "devDependencies": {
