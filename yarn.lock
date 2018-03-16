@@ -628,7 +628,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
 
 "types@git+http://git@localhost:7005/types":
   version "0.0.1"
-  resolved "git+http://git@localhost:7005/types#2e75f007e38be031045c4b31b5828fa5e20f6113"
+  resolved "git+http://git@localhost:7005/types#6e5f4fb92156050afa530ae307b79c7b31040319"
 
 uid-number@^0.0.6:
   version "0.0.6"
