@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "bcrypt": "1.0.3",
-    "types": "git+http://git@localhost:7005/types"
+    "types": "git+http://git@localhost:7005/types",
+    "uuid": "3.2.1"
   }
 }
