@@ -4,9 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./test",
-    "test": "VERBOSE=true node ./test",
-    "coverage": "VERBOSE=true nyc node ./test",
+    "start": "nyc -a node test/",
+    "test": "VERBOSE=true nyc -a node test/",
     "test:slow": "VERBOSE=true RUNS=5000 node ./test -- -v"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
