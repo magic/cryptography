@@ -114,11 +114,6 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-"config@file:../config":
-  version "0.0.1"
-  dependencies:
-    types "file:../../../../.cache/yarn/v1/types"
-
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
@@ -132,12 +127,6 @@ cryptiles@3.x.x:
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-3.1.2.tgz#a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe"
   dependencies:
     boom "5.x.x"
-
-"cryptography@file:.":
-  version "0.0.1"
-  dependencies:
-    bcrypt "1.0.3"
-    types "file:../../../../.cache/yarn/v1/types"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -155,10 +144,9 @@ deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
-"deep@file:../deep":
+"deep@git+http://git@localhost:7005/deep":
   version "0.0.1"
-  dependencies:
-    types "file:../../../../.cache/yarn/v1/types"
+  resolved "git+http://git@localhost:7005/deep#4aae9de92e51b5a92ef2195e1680ebfee79da3f9"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -345,11 +333,6 @@ json-schema@0.2.3:
 json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
-
-"json@file:../json":
-  version "0.0.1"
-  dependencies:
-    types "file:../../../../.cache/yarn/v1/types"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -571,14 +554,6 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
-"store@file:../store":
-  version "1.0.0"
-  dependencies:
-    config "file:../../../../.cache/yarn/v1/config"
-    cryptography "file:../../../../.cache/yarn/v1/cryptography"
-    json "file:../../../../.cache/yarn/v1/json"
-    types "file:../../../../.cache/yarn/v1/types"
-
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -628,14 +603,12 @@ tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
-"test@file:../test":
+"test@git+http://git@localhost:7005/test":
   version "0.0.1"
+  resolved "git+http://git@localhost:7005/test#6eed54c73f23b5f2a0f5b761acb7cc65e4f637b5"
   dependencies:
-    config "file:../../../../.cache/yarn/v1/config"
-    cryptography "file:../../../../.cache/yarn/v1/cryptography"
-    deep "file:../../../../.cache/yarn/v1/deep"
-    store "file:../../../../.cache/yarn/v1/store"
-    types "file:../../../../.cache/yarn/v1/types"
+    deep "git+http://git@localhost:7005/deep"
+    types "git+http://git@localhost:7005/types"
 
 tough-cookie@~2.3.3:
   version "2.3.4"
@@ -653,8 +626,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-"types@file:../types":
+"types@git+http://git@localhost:7005/types":
   version "0.0.1"
+  resolved "git+http://git@localhost:7005/types#2e75f007e38be031045c4b31b5828fa5e20f6113"
 
 uid-number@^0.0.6:
   version "0.0.6"

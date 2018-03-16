@@ -5,15 +5,16 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node ./test",
-    "test": "node ./test -- -v",
-    "test:slow": "RUNS=5000 node ./test -- -v"
+    "test": "VERBOSE=true node ./test",
+    "coverage": "VERBOSE=true nyc node ./test",
+    "test:slow": "VERBOSE=true RUNS=5000 node ./test -- -v"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "devDependencies": {
-    "test": "file:../test"
+    "test": "git+http://git@localhost:7005/test"
   },
   "dependencies": {
     "bcrypt": "1.0.3",
-    "types": "file:../types"
+    "types": "git+http://git@localhost:7005/types"
   }
 }
