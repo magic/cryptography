@@ -1,7 +1,6 @@
 const crypto = require('crypto')
 const { isNumber } = require('types')
 
-
 const randomBytes = (byte = 33) => new Promise((resolve, reject) => {
   byte = parseInt(byte, 10)
   if (!isNumber(byte)) {
