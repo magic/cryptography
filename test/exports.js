@@ -1,5 +1,5 @@
 const c = require('../src')
-const { isFunction, isObject } = require('types')
+const { isFunction, isObject, isArray } = require('types')
 
 const fns = [
   { fn: () => c.hash, expect: isFunction },
@@ -12,6 +12,8 @@ const fns = [
   { fn: () => c.random.number, expect: isFunction },
   { fn: () => c.randomBytes, expect: isFunction },
   { fn: () => c.randomNumber, expect: isFunction },
+  { fn: () => c.words, expect: isFunction },
+  { fn: () => c.wordlist, expect: isArray },
 ]
 
 module.exports = fns

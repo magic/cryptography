@@ -7,6 +7,13 @@ const randomBytes = require('./random/bytes')
 const randomNumber = require('./random/number')
 const uuid = require('./uuid')
 
+const words = require('./words')
+const wordlist = require('./wordlist')
+const range = require('./range')
+
+// suppress console.error
+console.error = () => {}
+
 const tests = {
   moduleexports,
   hash,
@@ -16,6 +23,9 @@ const tests = {
     bytes: randomBytes,
     number: randomNumber,
   },
+  words,
+  wordlist,
+  range,
 }
 
 run(tests)

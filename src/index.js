@@ -5,9 +5,8 @@ const salt = require('./salt')
 const hash = require('./hash')
 
 const uuid = require('./uuid')
-
-// suppress console.error
-console.error = () => {}
+const { words, word } = require('./words')
+const wordlist = require('./wordlist')
 
 module.exports = {
   hash,
@@ -19,4 +18,7 @@ module.exports = {
   },
   randomBytes,
   randomNumber,
+  words,
+  word,
+  wordlist,
 }
