@@ -1,13 +1,17 @@
 const crypto = require('crypto')
 const { isNumber } = require('types')
 
-const randomBytes = (byte = 33) => new Promise((resolve, reject) => {
+const byteDefault = 33
+
+const randomBytes = (byte) => new Promise((resolve, reject) => {
   byte = parseInt(byte, 10)
   if (!isNumber(byte)) {
-    reject(new Error(`Invalid number of bytes passed to cryptography.randomBytes. ${byte}`))
+    console.error(`cryptography.randomBytes(bytes): bytes must be a number. ${byte}. using default instead: ${byteDefault}`)
+    byte = byteDefault
   }
 
   crypto.randomBytes(byte, (err, buf) => {
+    /* istanbul ignore if */
     if (err) {
       reject(err)
     }

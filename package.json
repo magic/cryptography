@@ -6,9 +6,19 @@
   "scripts": {
     "start": "nyc -a node test/",
     "test": "VERBOSE=true nyc -a node test/",
-    "test:slow": "VERBOSE=true RUNS=5000 node ./test -- -v"
+    "test:slow": "VERBOSE=true RUNS=5000 nyc -a node ./test",
+    "lint": "esw -w ./src ./test",
+    "lint:fix": "eslint --fix ./src ./test"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
+  "eslintConfig": {
+    "extends": "standard",
+    "rules": {
+      "comma-dangle": ["error", "always-multiline"],
+      "brace-style": ["error", "stroustrup"],
+      "semi": ["error", "never"]
+    }
+  },
   "devDependencies": {
     "test": "git+http://git@localhost:7005/test"
   },

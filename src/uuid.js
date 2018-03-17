@@ -12,7 +12,9 @@ const namespaces = {
   X500,
 }
 
-const addNS = (key, uuid) => {
+const cleanUUID = id => isUUID(id) ? id : v4()
+
+const addNS = (key, uuid = v4()) => {
   if (!isString(key)) {
     console.error('cryptography.uuid.addNS: expected string as first argument, got: {key}')
     return false
@@ -22,12 +24,9 @@ const addNS = (key, uuid) => {
     return namespaces[key]
   }
 
-  if (!isUUID(uuid)) {
-    uuid = v4()
-  }
+  namespaces[key] = cleanUUID(uuid)
 
-  namespaces[key] = uuid
-  return uuid
+  return namespaces[key]
 }
 
 module.exports = {
@@ -36,4 +35,5 @@ module.exports = {
   namespaces,
   addNS,
   addNamespace: addNS,
+  cleanUUID,
 }
