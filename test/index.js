@@ -1,4 +1,4 @@
-const { run } = require('test')
+const { run } = require('@magic/test')
 
 const moduleexports = require('./exports')
 const hash = require('./hash')

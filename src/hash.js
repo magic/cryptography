@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const { promisify } = require('util')
-const { isFunction, isEmpty, isString, isDate } = require('types')
+const { isFunction, isEmpty, isString, isDate } = require('@magic/types')
 
 const genSalt = require('./salt')
 

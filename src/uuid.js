@@ -1,7 +1,7 @@
 const v4 = require('uuid/v4')
 const v5 = require('uuid/v5')
 
-const { isUUID, isString } = require('types')
+const { isUUID, isString } = require('@magic/types')
 
 const { DNS, URL, OID, X500 } = v5
 

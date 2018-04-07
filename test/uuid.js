@@ -1,4 +1,4 @@
-const { isUUID } = require('types')
+const { isUUID } = require('@magic/types')
 
 const { uuid } = require('../src')
 

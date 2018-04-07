@@ -1,4 +1,4 @@
-const { isArray } = require('types')
+const { isArray } = require('@magic/types')
 const range = require('../src/range.js')
 
 const fns = [

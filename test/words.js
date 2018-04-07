@@ -1,4 +1,4 @@
-const { isString } = require('types')
+const { isString } = require('@magic/types')
 const c = require('../src/words')
 
 const runs = process.env.RUNS || 1

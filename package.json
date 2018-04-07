@@ -14,17 +14,26 @@
   "eslintConfig": {
     "extends": "standard",
     "rules": {
-      "comma-dangle": ["error", "always-multiline"],
-      "brace-style": ["error", "stroustrup"],
-      "semi": ["error", "never"]
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "brace-style": [
+        "error",
+        "stroustrup"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ]
     }
-  },
-  "devDependencies": {
-    "test": "git+http://git@localhost:7005/test"
   },
   "dependencies": {
     "bcrypt": "1.0.3",
-    "types": "git+http://git@localhost:7005/types",
+    "@magic/types": "github:magic/types",
     "uuid": "3.2.1"
+  },
+  "devDependencies": {
+    "@magic/test": "github:magic/test"
   }
 }

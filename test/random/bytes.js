@@ -1,4 +1,4 @@
-const { isString } = require('types')
+const { isString } = require('@magic/types')
 
 const { randomBytes } = require('../../src')
 

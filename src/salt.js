@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const { promisify } = require('util')
 
-const { isNumber, isEmpty } = require('types')
+const { isNumber, isEmpty } = require('@magic/types')
 
 const saltRounds = 10
 

@@ -1,4 +1,4 @@
-const { isString, isEmpty } = require('types')
+const { isString, isEmpty } = require('@magic/types')
 
 const wordlist = require('../src/wordlist')
 

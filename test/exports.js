@@ -1,5 +1,5 @@
 const c = require('../src')
-const { isFunction, isObject, isArray } = require('types')
+const { isFunction, isObject, isArray } = require('@magic/types')
 
 const fns = [
   { fn: () => c.hash, expect: isFunction },

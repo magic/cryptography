@@ -1,5 +1,5 @@
 const crypto = require('crypto')
-const { isNumber } = require('types')
+const { isNumber } = require('@magic/types')
 
 const byteDefault = 33
 
