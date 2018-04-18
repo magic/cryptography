@@ -1,36 +1,19 @@
 {
   "name": "@magic/cryptography",
   "version": "0.0.1",
-  "description": "",
+  "description": "Cryptographic primitives. Uses sane defaults.",
   "main": "src/index.js",
   "scripts": {
-    "start": "nyc -a node test/",
-    "test": "VERBOSE=true nyc -a node test/",
-    "test:slow": "VERBOSE=true RUNS=5000 nyc -a node ./test",
-    "lint": "esw -w ./src ./test",
-    "lint:fix": "eslint --fix ./src ./test"
+    "start": "t -p",
+    "test": "t",
+    "test:slow": "RUNS=50 t",
+    "format": "f -w",
+    "format:check": "f"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
-  "eslintConfig": {
-    "extends": "standard",
-    "rules": {
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "brace-style": [
-        "error",
-        "stroustrup"
-      ],
-      "semi": [
-        "error",
-        "never"
-      ]
-    }
-  },
   "dependencies": {
-    "bcrypt": "1.0.3",
     "@magic/types": "github:magic/types",
+    "bcrypt": "2.0.0",
     "uuid": "3.2.1"
   },
   "devDependencies": {
