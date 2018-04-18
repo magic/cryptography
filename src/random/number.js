@@ -5,7 +5,7 @@ const defaultArgs = {
   max: 281474976710654,
 }
 
-const randomNumber = async (params) => {
+const randomNumber = async params => {
   try {
     const options = Object.assign({}, defaultArgs, params)
     let { min, max } = options
@@ -23,7 +23,7 @@ const randomNumber = async (params) => {
     }
 
     if (distance > 281474976710655) {
-      throw new Error('You can not get all possible random numbers if range is greater than 256^6-1')
+      throw new Error('Range is greater than 256^6-1')
     }
 
     let subOnEnd = 0
@@ -40,20 +40,16 @@ const randomNumber = async (params) => {
     if (distance < 256) {
       maxBytes = 1
       maxDec = 256
-    }
-    else if (distance < 65536) {
+    } else if (distance < 65536) {
       maxBytes = 2
       maxDec = 65536
-    }
-    else if (distance < 16777216) {
+    } else if (distance < 16777216) {
       maxBytes = 3
       maxDec = 16777216
-    }
-    else if (distance < 4294967296) {
+    } else if (distance < 4294967296) {
       maxBytes = 4
       maxDec = 4294967296
-    }
-    else if (distance < 1099511627776) {
+    } else if (distance < 1099511627776) {
       maxBytes = 4
       maxDec = 1099511627776
     }
@@ -61,9 +57,11 @@ const randomNumber = async (params) => {
     const byteString = await crypto.randomBytes(maxBytes).toString('hex')
     const randbytes = parseInt(byteString, 16)
 
-    return Math.min(max, Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd))
-  }
-  catch (e) {
+    return Math.min(
+      max,
+      Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd),
+    )
+  } catch (e) {
     console.error(e)
     return false
   }
