@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const { promisify } = require('util')
-const { isFunction, isEmpty, isString, isDate } = require('@magic/types')
+
+const is = require('@magic/types')
 
 const genSalt = require('./salt')
 
@@ -8,11 +9,11 @@ const genHash = promisify(bcrypt.hash)
 
 const hash = async (val, rounds) => {
   try {
-    if (isDate(val) || isFunction(val)) {
+    if (is.date(val) || is.function(val)) {
       val = val.toString()
     }
 
-    if (isEmpty(val) || !isString(val)) {
+    if (is.empty(val) || !is.string(val)) {
       throw new Error('genHash called without a string')
     }
 
@@ -29,10 +30,9 @@ const hash = async (val, rounds) => {
     }
 
     return hash
-  }
-  catch (e) {
+  } catch (e) {
     console.error('genHash:', e)
-    return false
+    return e
   }
 }
 
