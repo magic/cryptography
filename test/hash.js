@@ -8,7 +8,7 @@ const fns = [
   {
     fn: async () => hash('test'),
     runs,
-    expect: t => t.length === 60,
+    expect: is.len.eq(60),
     info: `Test lengths of ${runs} generated hash${runs > 1 && 'es'}`,
   },
   {
@@ -30,17 +30,22 @@ const fns = [
           .fill('test')
           .map(hash),
       ),
-    expect: t => t.length === new Set(t).size,
+    expect: t => is.len.eq(new Set(t), t),
     info: `Test if ${runs} hash${runs > 1 ? 'es are' : ' is'} unique`,
   },
-  { fn: async () => hash(''), runs, expect: is.error },
-  { fn: async () => hash(() => {}), runs, expect: t => t.length === 60 },
   {
-    fn: async () => [hash(() => {}), hash(() => {})],
+    fn: async () => await hash(''),
+    runs,
+    expect: is.error,
+    info: 'Hashing an empty string returns an error',
+  },
+  { fn: async () => await hash(() => {}), runs, expect: is.len.eq(60) },
+  {
+    fn: async () => [await hash(() => {}), await hash(() => {})],
     runs,
     expect: t => t[0] !== t[1],
   },
-  { fn: async () => hash(new Date()), runs, expect: t => t.length === 60 },
+  { fn: async () => await hash(new Date()), runs, expect: is.len.eq(60) },
 ]
 
 module.exports = fns

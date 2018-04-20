@@ -1,31 +1,25 @@
-const { run } = require('@magic/test')
+const { log } = require('@magic/test')
 
-const moduleexports = require('./exports')
-const hash = require('./hash')
-const salt = require('./salt')
 const randomBytes = require('./random/bytes')
 const randomNumber = require('./random/number')
-const uuid = require('./uuid')
+const randomNumbers = require('./random/numbers')
 
-const words = require('./words')
-const wordlist = require('./wordlist')
-const range = require('./range')
+// suppress console.error when running quick tests
+console.error = (...e) => {
+  log.info(...e)
+}
 
-// suppress console.error
-console.error = () => {}
-
-const tests = {
-  moduleexports,
-  hash,
-  salt,
-  uuid,
+module.exports = {
+  spec: require('./spec'),
+  hash: require('./hash'),
+  salt: require('./salt'),
+  uuid: require('./uuid'),
   random: {
     bytes: randomBytes,
     number: randomNumber,
+    numbers: randomNumbers,
   },
-  words,
-  wordlist,
-  range,
+  words: require('./words'),
+  wordlist: require('./wordlist'),
+  range: require('./range'),
 }
-
-run(tests)

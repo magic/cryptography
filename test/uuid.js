@@ -1,4 +1,4 @@
-const { isUUID } = require('@magic/types')
+const is = require('@magic/types')
 
 const { uuid } = require('../src')
 
@@ -9,20 +9,26 @@ const runs = process.env.TESTRUNS || 10
 const fns = {
   v4: [
     { fn: () => uuid.v4(), runs, expect: t => t !== uuid.v4() },
-    { fn: () => uuid.v4(), runs, expect: isUUID },
+    { fn: () => uuid.v4(), runs, expect: is.uuid },
   ],
-  v5: [
-    { fn: () => uuid.v5('test', DNS), expect: isUUID },
-  ],
+  v5: [{ fn: () => uuid.v5('test', DNS), expect: is.uuid }],
   addNamespace: [
-    { fn: () => uuid.addNS('test'), expect: t => isUUID(uuid.namespaces.test) },
+    {
+      fn: () => uuid.addNS('test'),
+      expect: t => is.uuid(uuid.namespaces.test),
+    },
     { fn: () => uuid.addNS('test'), expect: t => t === uuid.namespaces.test },
-    { fn: () => uuid.addNS('t', 't920tj22t32-tj2f2f223f23'), expect: isUUID },
-    { fn: () => uuid.addNS('t', 't920tj22t32-tj2f2f223f23'), expect: t => t !== 't920tj22t32-tj2f2f223f23' },
-    { fn: () => uuid.addNS(), expect: false },
+    { fn: () => uuid.addNS('t', 't920tj22t32-tj2f2f223f23'), expect: is.uuid },
+    {
+      fn: () => uuid.addNS('t', 't920tj22t32-tj2f2f223f23'),
+      expect: t => t !== 't920tj22t32-tj2f2f223f23',
+    },
+    { fn: () => uuid.addNS(), expect: is.error },
   ],
   cleanUUID: [
-    { fn: () => uuid.cleanUUID('test'), expect: isUUID },
+    { fn: () => uuid.cleanUUID('test'), expect: is.uuid },
+    { fn: () => uuid.cleanUUID(''), expect: is.uuid },
+    { fn: () => uuid.cleanUUID(123456789), expect: is.uuid },
   ],
 }
 
