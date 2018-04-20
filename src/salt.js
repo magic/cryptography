@@ -9,21 +9,19 @@ const genSalt = promisify(bcrypt.genSalt)
 
 const salt = async (rounds = saltRounds) => {
   try {
-    if (isEmpty(rounds) || !isNumber(rounds)) {
+    if (rounds < 0 || !isNumber(rounds)) {
       rounds = saltRounds
     }
 
     const salt = genSalt(rounds)
-    /* istanbul ignore if */
     if (!salt) {
       throw new Error(`Invalid salt generated: ${salt}`)
     }
 
     return salt
-  }
-  catch (e) {
-    /* istanbul ignore next */
-    throw e
+  } catch (e) {
+    log.error(e)
+    return e
   }
 }
 

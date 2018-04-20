@@ -1,7 +1,9 @@
-const bcrypt = require('bcrypt')
 const { promisify } = require('util')
 
+const bcrypt = require('bcrypt')
+
 const is = require('@magic/types')
+const log = require('@magic/log')
 
 const genSalt = require('./salt')
 
@@ -31,7 +33,7 @@ const hash = async (val, rounds) => {
 
     return hash
   } catch (e) {
-    console.error('genHash:', e)
+    log.error('genHash:', e)
     return e
   }
 }
