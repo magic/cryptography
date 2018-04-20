@@ -1,5 +1,6 @@
 const randomBytes = require('./random/bytes')
 const randomNumber = require('./random/number')
+const randomNumbers = require('./random/numbers')
 
 const salt = require('./salt')
 const hash = require('./hash')
@@ -15,9 +16,11 @@ module.exports = {
   random: {
     bytes: randomBytes,
     number: randomNumber,
+    numbers: randomNumbers,
   },
   randomBytes,
   randomNumber,
+  randomNumbers,
   words,
   word,
   wordlist,
