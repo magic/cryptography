@@ -1,6 +1,4 @@
-const randomBytes = require('./random/bytes')
-const randomNumber = require('./random/number')
-const randomNumbers = require('./random/numbers')
+const random = require('./random')
 
 const salt = require('./salt')
 const hash = require('./hash')
@@ -13,14 +11,10 @@ module.exports = {
   hash,
   salt,
   uuid,
-  random: {
-    bytes: randomBytes,
-    number: randomNumber,
-    numbers: randomNumbers,
-  },
-  randomBytes,
-  randomNumber,
-  randomNumbers,
+  random,
+  randomBytes: random.bytes,
+  randomNumber: random.number,
+  randomNumbers: random.numbers,
   words,
   word,
   wordlist,
