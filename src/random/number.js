@@ -1,5 +1,7 @@
 const crypto = require('crypto')
 
+const log = require('@magic/log')
+
 const defaultArgs = {
   min: 0,
   max: 281474976710654,
@@ -19,11 +21,11 @@ const randomNumber = async params => {
     }
 
     if (max > Number.MAX_SAFE_INTEGER) {
-      throw new Error('max number should be safe integer limit')
+      throw new Error(`Max number should be Number.MAX_SAFE_INTEGER ${max}`)
     }
 
     if (distance > 281474976710655) {
-      throw new Error('Range is greater than 256^6-1')
+      throw new Error(`Distance is greater than 256^6-1 ${distance}`)
     }
 
     let subOnEnd = 0
@@ -62,8 +64,8 @@ const randomNumber = async params => {
       Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd),
     )
   } catch (e) {
-    console.error(e)
-    return false
+    log.error(e)
+    return e
   }
 }
 
