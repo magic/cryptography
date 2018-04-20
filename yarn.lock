@@ -10,7 +10,7 @@
 
 "@magic/test@github:magic/test":
   version "0.0.1"
-  resolved "https://codeload.github.com/magic/test/tar.gz/04ee606b8cf8ee0fa5e5dfee66e4d903e6dd917e"
+  resolved "https://codeload.github.com/magic/test/tar.gz/21a98fe55e33730dfa4556264c50adc885cd2483"
   dependencies:
     "@magic/log" "github:magic/log"
     "@magic/types" "github:magic/types"
@@ -19,7 +19,7 @@
 
 "@magic/types@github:magic/types":
   version "0.0.1"
-  resolved "https://codeload.github.com/magic/types/tar.gz/19c30cf5ab7b3e0270cd02e3a7b1273fb19a1c31"
+  resolved "https://codeload.github.com/magic/types/tar.gz/6d4fc5c672481376e67c78e4bb4f5cd185b58d50"
 
 abbrev@1:
   version "1.1.1"
@@ -199,12 +199,12 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-bcrypt@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/bcrypt/-/bcrypt-2.0.0.tgz#7c0c68e7593854dd397e048c6e042dcc5e462592"
+bcrypt@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/bcrypt/-/bcrypt-2.0.1.tgz#229c5afe09379789f918efe86e5e5b682e509f85"
   dependencies:
     nan "2.10.0"
-    node-pre-gyp "0.9.0"
+    node-pre-gyp "0.9.1"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1191,9 +1191,9 @@ needle@^2.2.0:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-node-pre-gyp@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.9.0.tgz#bdd4c3afac9b1b1ebff0a9ff3362859eb6781bb8"
+node-pre-gyp@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.9.1.tgz#f11c07516dd92f87199dbc7e1838eab7cd56c9e0"
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"

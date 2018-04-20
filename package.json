@@ -14,7 +14,7 @@
   "dependencies": {
     "@magic/log": "github:magic/log",
     "@magic/types": "github:magic/types",
-    "bcrypt": "2.0.0",
+    "bcrypt": "2.0.1",
     "uuid": "3.2.1"
   },
   "devDependencies": {
