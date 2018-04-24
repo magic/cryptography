@@ -1,6 +1,6 @@
 const { is } = require('@magic/test')
 
-const salt = require('../src/salt')
+const { salt } = require('../../src/hash')
 
 const runs = process.env.RUNS || 10
 

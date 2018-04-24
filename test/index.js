@@ -12,7 +12,6 @@ console.error = (...e) => {
 module.exports = {
   spec: require('./spec'),
   hash: require('./hash'),
-  salt: require('./salt'),
   uuid: require('./uuid'),
   random: {
     bytes: randomBytes,
