@@ -1,15 +1,12 @@
 const crypto = require('crypto')
-const { isNumber } = require('@magic/types')
+const is = require('@magic/types')
 
 const byteDefault = 33
 
 const randomBytes = byte =>
   new Promise((resolve, reject) => {
     byte = parseInt(byte, 10)
-    if (!isNumber(byte)) {
-      console.error(
-        `cryptography.randomBytes(bytes): bytes must be a number. ${byte}. using default instead: ${byteDefault}`,
-      )
+    if (!is.number(byte)) {
       byte = byteDefault
     }
 
