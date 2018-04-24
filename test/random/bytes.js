@@ -4,7 +4,7 @@ const { randomBytes } = require('../../src')
 
 const runs = process.env.RUNS || 100
 
-const fns = [
+module.exports = [
   { fn: async () => (await randomBytes()) !== (await randomBytes()) },
   { fn: async () => randomBytes(), runs, expect: is.string },
   { fn: async () => randomBytes(), runs, expect: is.len.equal(66) },
@@ -17,5 +17,3 @@ const fns = [
   { fn: async () => randomBytes([]), runs, expect: is.len.eq(66) },
   { fn: async () => randomBytes(() => 321), runs, expect: is.len.eq(66) },
 ]
-
-module.exports = fns

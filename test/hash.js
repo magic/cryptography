@@ -4,7 +4,7 @@ const { hash } = require('../src')
 
 const runs = process.env.RUNS || 10
 
-const fns = [
+module.exports = [
   {
     fn: async () => hash('test'),
     runs,
@@ -47,5 +47,3 @@ const fns = [
   },
   { fn: async () => await hash(new Date()), runs, expect: is.len.eq(60) },
 ]
-
-module.exports = fns

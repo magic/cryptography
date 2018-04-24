@@ -3,7 +3,7 @@ const c = require('../src/words')
 
 const runs = process.env.RUNS || 1
 
-const fns = [
+module.exports = [
   {
     fn: async () => c.words(12),
     runs,
@@ -23,5 +23,3 @@ const fns = [
   },
   { fn: async () => c.word(), runs, expect: is.string },
 ]
-
-module.exports = fns

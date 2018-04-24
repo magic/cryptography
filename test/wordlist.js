@@ -2,7 +2,7 @@ const { isString, isEmpty } = require('@magic/types')
 
 const wordlist = require('../src/wordlist')
 
-const fns = [
+module.exports = [
   { fn: () => wordlist.length, expect: 7776, info: 'test for wordlist length' },
   {
     fn: () => wordlist.length,
@@ -25,5 +25,3 @@ const fns = [
     info: 'test that all words are longer than 3 chars',
   },
 ]
-
-module.exports = fns

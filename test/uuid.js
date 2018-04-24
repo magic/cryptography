@@ -6,7 +6,7 @@ const { DNS } = uuid.v5
 
 const runs = process.env.TESTRUNS || 10
 
-const fns = {
+module.exports = {
   v4: [
     { fn: () => uuid.v4(), runs, expect: t => t !== uuid.v4() },
     { fn: () => uuid.v4(), runs, expect: is.uuid },
@@ -31,5 +31,3 @@ const fns = {
     { fn: () => uuid.cleanUUID(123456789), expect: is.uuid },
   ],
 }
-
-module.exports = fns

@@ -13,7 +13,7 @@ const randomBytes = require('../src/random/bytes')
 const randomNumber = require('../src/random/bytes')
 const randomNumbers = require('../src/random/bytes')
 
-const fns = [
+module.exports = [
   { fn: () => c.hash, expect: is.function },
   { fn: () => c.salt, expect: is.function },
   { fn: () => c.uuid, expect: is.object },
@@ -27,8 +27,4 @@ const fns = [
   { fn: () => c.words, expect: is.function },
   { fn: () => c.wordlist, expect: is.array },
   { fn: () => c.wordlist, expect: is.deep.equal(wordlist) },
-  // { fn: () => c.randomNumbers, expect: is.deep.equal(randomNumbers) },
-  // { fn: () => c.randomNumbers, expect: is.deep.equal(random.numbers) },
 ]
-
-module.exports = fns

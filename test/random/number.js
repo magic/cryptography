@@ -8,7 +8,7 @@ const numbers = []
 
 const UNSAFE_INTEGER = Number.MAX_SAFE_INTEGER + 1
 
-const fns = [
+module.exports = [
   { fn: () => randomNumber({ max: 1 }), runs, expect: t => t >= 0 },
   { fn: () => randomNumber({ max: 1 }), runs, expect: t => t <= 1 },
   // numbers stay in chosen bounds
@@ -105,5 +105,3 @@ const fns = [
     expect: t => t.length === new Set(numbers).size,
   },
 ]
-
-module.exports = fns
