@@ -1,15 +1,11 @@
 const random = require('./random')
-const hash = require('./hash')
-const { words, word } = require('./words')
 
 module.exports = {
   hash: require('./hash'),
+  jwt: require('./jwt'),
+  random: require('./random'),
   uuid: require('./uuid'),
-  random,
-  randomBytes: random.bytes,
-  randomNumber: random.number,
-  randomNumbers: random.numbers,
-  words,
-  word,
+  words: require('./word'),
   wordlist: require('./wordlist'),
+  words: require('./words'),
 }
