@@ -15,6 +15,7 @@
     "@magic/log": "github:magic/log",
     "@magic/types": "github:magic/types",
     "bcrypt": "2.0.1",
+    "jsonwebtoken": "8.2.1",
     "uuid": "3.2.1"
   },
   "devDependencies": {
