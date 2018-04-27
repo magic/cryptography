@@ -2,7 +2,7 @@ const is = require('@magic/types')
 
 const { randomBytes } = require('../../src')
 
-const runs = process.env.RUNS || 100
+const runs = process.env.RUNS || 1
 
 module.exports = [
   { fn: async () => (await randomBytes()) !== (await randomBytes()) },

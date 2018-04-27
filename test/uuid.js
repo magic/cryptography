@@ -4,7 +4,7 @@ const { uuid } = require('../src')
 
 const { DNS } = uuid.v5
 
-const runs = process.env.TESTRUNS || 10
+const runs = process.env.TESTRUNS || 1
 
 module.exports = {
   v4: [
