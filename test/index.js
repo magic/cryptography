@@ -1,25 +1,18 @@
 const { log } = require('@magic/test')
 
-const randomBytes = require('./random/bytes')
-const randomNumber = require('./random/number')
-const randomNumbers = require('./random/numbers')
-
 // suppress console.error when running quick tests
 console.error = (...e) => {
   log.info(...e)
 }
 
 module.exports = {
-  spec: require('./spec'),
   hash: require('./hash'),
-  uuid: require('./uuid'),
   jwt: require('./jwt'),
-  random: {
-    bytes: randomBytes,
-    number: randomNumber,
-    numbers: randomNumbers,
-  },
+  random: require('./random'),
+  range: require('./range'),
+  spec: require('./spec'),
+  uuid: require('./uuid'),
+  word: require('./word'),
   words: require('./words'),
   wordlist: require('./wordlist'),
-  range: require('./range'),
 }

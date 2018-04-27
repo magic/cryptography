@@ -4,10 +4,8 @@ const jwt = require('../../src/jwt')
 const sign = async v => await jwt.sign(v, 'secret')
 
 module.exports = [
-  {
-    fn: async () => await jwt.sign({ t: 't' }, 'secret'),
-    expect: t => console.log({ t: t.length }) || is.len.eq(132),
-  },
+  { fn: async () => await sign({ t: 't' }), expect: is.len.eq(139) },
+  { fn: async () => await sign({ t: 'test' }), expect: is.len.eq(143) },
   {
     fn: async () => await sign({ t: 't' }),
     expect: async () => await sign({ t: 't' }),
