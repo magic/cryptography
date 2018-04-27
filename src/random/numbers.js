@@ -3,23 +3,18 @@ const is = require('@magic/types')
 const number = require('./number')
 const range = require('../range')
 
-const randomNumbers = async (count = 1, numbers = []) => {
-  if (count < 1) {
+const randomNumbers = async (count = 1) => {
+  if (!is.number(count) || count < 1) {
     count = 1
   }
 
-  if (numbers.length) {
-    count -= numbers.length
+  const numbers = new Set()
+
+  while(numbers.size < count) {
+    numbers.add(await number())
   }
 
-  numbers = numbers.concat(await Promise.all(range(count).map(number)))
-
-  const noDupes = new Set(numbers)
-  if (count !== noDupes.size) {
-    numbers = numbers.concat(await randomNumbers(count, numbers))
-  }
-
-  return numbers
+  return Array.from(numbers)
 }
 
 module.exports = randomNumbers
