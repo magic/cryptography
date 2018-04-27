@@ -13,6 +13,7 @@ module.exports = {
   spec: require('./spec'),
   hash: require('./hash'),
   uuid: require('./uuid'),
+  jwt: require('./jwt'),
   random: {
     bytes: randomBytes,
     number: randomNumber,
