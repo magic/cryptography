@@ -9,7 +9,7 @@ const compareHash = promisify(bcrypt.compare)
 
 const isValidArg = a => is.string(a) && !is.empty(a)
 
-const transform = a => a && is.fn(a.toString) ? a.toString() : a
+const transform = a => (a && is.fn(a.toString) ? a.toString() : a)
 
 const compare = async (a, b) => {
   const isValid = [a, b].filter(isValidArg).map(transform)
