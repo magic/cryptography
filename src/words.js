@@ -1,6 +1,20 @@
+const is = require('@magic/types')
+
 const range = require('./range')
 const word = require('./word')
 
-const words = async (count = 10) => Promise.all(range(count).map(word))
+const randomWords = async (count = 1) => {
+  if (!is.number(count) || count < 1) {
+    count = 1
+  }
 
-module.exports = words
+  const words = new Set()
+
+  while (words.size < count) {
+    words.add(await word())
+  }
+
+  return Array.from(words)
+}
+
+module.exports = randomWords
