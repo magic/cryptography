@@ -59,10 +59,7 @@ const randomNumber = async params => {
     const byteString = await crypto.randomBytes(maxBytes).toString('hex')
     const randbytes = parseInt(byteString, 16)
 
-    return Math.min(
-      max,
-      Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd),
-    )
+    return Math.min(max, Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd))
   } catch (e) {
     log.error(e)
     return e

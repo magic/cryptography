@@ -10,7 +10,7 @@ const randomNumbers = async (count = 1) => {
 
   const numbers = new Set()
 
-  while(numbers.size < count) {
+  while (numbers.size < count) {
     numbers.add(await number())
   }
 
