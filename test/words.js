@@ -5,7 +5,7 @@ const runs = process.env.RUNS || 1
 
 module.exports = [
   {
-    fn: async () => words(12),
+    fn: async () => await words(12),
     runs,
     expect: w => is.len.eq(w, new Set(w)),
     info: `Test single list of words for uniqueness ${runs} times`,
@@ -25,7 +25,7 @@ module.exports = [
   {
     fn: async () => await words(),
     runs,
-    expect: is.len.equal(10),
+    expect: is.len.equal(1),
     info: `Test words for length if no arg is provided`,
   },
 ]
