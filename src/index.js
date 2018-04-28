@@ -2,7 +2,7 @@ const random = require('./random')
 
 module.exports = {
   hash: require('./hash'),
-  jwt: require('./jwt'),
+  JWT: require('./jwt'),
   random: require('./random'),
   uuid: require('./uuid'),
   words: require('./word'),
