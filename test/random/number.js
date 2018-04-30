@@ -89,7 +89,7 @@ module.exports = [
   },
   {
     fn: () => number({ min: 32000323, max: UNSAFE_INTEGER }),
-    expect: e => e.message.indexOf('Max number should be safe integer limit'),
+    expect: e => e.message.indexOf('Max number should be Number.MAX_SAFE_INTEGER') > -1,
   },
   // numbers will not equal each other
   { fn: () => number(), runs, expect: t => t !== number() },
