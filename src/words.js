@@ -4,7 +4,9 @@ const range = require('./range')
 const word = require('./word')
 
 const randomWords = async (count = 1) => {
-  if (!is.number(count) || count < 1) {
+  if (!is.number(count)) {
+    count = 1
+  } else if (count < 1) {
     count = 1
   }
 

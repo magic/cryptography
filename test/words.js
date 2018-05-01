@@ -19,8 +19,20 @@ module.exports = [
   {
     fn: async () => await words(12),
     runs,
-    expect: t => !is.deep.equal(t, words(12)),
+    expect: async t => !is.deep.equal(t, await words(12)),
     info: `Test 2 lists of words for uniqueness ${runs} times`,
+  },
+  {
+    fn: async () => await words('test'),
+    runs,
+    expect: is.len.eq(1),
+    info: `Test non number argument`,
+  },
+  {
+    fn: async () => await words(-1),
+    runs,
+    expect: async t => !is.deep.equal(t, await words(1)),
+    info: `Test negative number argument`,
   },
   {
     fn: async () => await words(),
