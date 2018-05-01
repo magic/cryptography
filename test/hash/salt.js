@@ -2,7 +2,7 @@ const { is } = require('@magic/test')
 
 const { salt } = require('../../src/hash')
 
-const runs = process.env.RUNS || 10
+const runs = process.env.RUNS || 1
 
 module.exports = [
   { fn: () => salt(), runs, expect: t => t.indexOf('$') === 0 },

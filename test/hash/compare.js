@@ -2,7 +2,7 @@ const is = require('@magic/types')
 
 const hash = require('../../src/hash')
 
-const runs = process.env.RUNS || 10
+const runs = process.env.RUNS || 1
 
 module.exports = [
   {
