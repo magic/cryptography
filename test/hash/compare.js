@@ -22,6 +22,11 @@ module.exports = [
     info: `compare strings fails for different strings`,
   },
   {
+    fn: async () => await hash.compare('', 'test'),
+    expect: false,
+    info: `compare empty string`,
+  },
+  {
     fn: async () => await hash.compare(12345, await hash('1234')),
     runs,
     expect: false,

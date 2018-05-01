@@ -12,13 +12,13 @@ const isValidArg = a => is.string(a) && !is.empty(a)
 const transform = a => (a && is.fn(a.toString) ? a.toString() : a)
 
 const compare = async (a, b) => {
-  const isValid = [a, b].filter(isValidArg).map(transform)
+  const strings = [a, b].map(transform).filter(isValidArg)
 
-  if (!isValid) {
+  if (strings.length !== 2) {
     return false
   }
 
-  const compared = await compareHash('' + a, '' + b)
+  const compared = await compareHash(...strings)
   return compared
 }
 
