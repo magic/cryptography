@@ -1,15 +1,13 @@
 const { promisify } = require('util')
 
-const bcrypt = require('bcrypt')
+const argon2 = require('argon2')
 
 const is = require('@magic/types')
 const log = require('@magic/log')
 
-const genSalt = require('./salt')
+const defaultOptions = { timeCost: 4, memoryCost: 8192, parallelism: 2, type: argon2.argon2d }
 
-const genHash = promisify(bcrypt.hash)
-
-const hash = async (val, rounds) => {
+const hash = async (val, options = {}) => {
   try {
     if (is.date(val) || is.function(val)) {
       val = val.toString()
@@ -19,13 +17,12 @@ const hash = async (val, rounds) => {
       throw new Error('genHash called without a string')
     }
 
-    const salt = await genSalt(rounds)
-    /* istanbul ignore if */
-    if (!salt) {
-      throw new Error('Invalid salt generated')
+    options = {
+      ...defaultOptions,
+      ...options,
     }
 
-    const hash = await genHash(val, salt)
+    const hash = await argon2.hash(val, options)
     /* istanbul ignore if */
     if (!hash) {
       throw new Error('Invalid hash generated')

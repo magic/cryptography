@@ -15,7 +15,6 @@ const randomNumbers = require('../src/random/bytes')
 module.exports = [
   { fn: () => c.hash, expect: is.function },
   { fn: () => c.hash.hash, expect: is.function },
-  { fn: () => c.hash.salt, expect: is.function },
   { fn: () => c.hash, expect: is.deep.equal(c.hash.hash) },
   { fn: () => c.uuid, expect: is.object },
   { fn: () => c.uuid.v4, expect: is.function },

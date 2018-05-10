@@ -23,7 +23,7 @@ module.exports = [
   },
   {
     fn: async () => await hash.compare('', 'test'),
-    expect: false,
+    expect: undefined,
     info: `compare empty string`,
   },
   {
