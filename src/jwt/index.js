@@ -51,17 +51,7 @@ class JWT {
       this.secret = await bytes()
     }
 
-    if (is.undef(args) || is.null(args)) {
-      args = {}
-    } else if (signable(args)) {
-      args = { payload: args }
-    }
-
-    if (!args.jwtid) {
-      args.jwtid = await v4()
-    }
-
-    const payload = { ...this.payload, ...args }
+    const payload = await this.object(args)
     options = { ...this.options.sign, ...options }
 
     try {
@@ -76,13 +66,29 @@ class JWT {
     }
   }
 
+  async object(args) {
+    if (is.undef(args) || is.null(args)) {
+      args = {}
+    } else if (signable(args)) {
+      args = { payload: args }
+    }
+
+    if (!args.jid) {
+      args.jid = await v4()
+    }
+
+    const payload = { ...this.payload, ...args }
+
+    return payload
+  }
+
   async verify(token, options = {}) {
     if (!token || !is.string(token)) {
       return false
     }
 
-    const { iss: issuer, aud: audience, jwtid } = this.payload
-    options = { ...this.options.verify, audience, issuer, jwtid, ...options }
+    const { iss: issuer, aud: audience, jid } = this.payload
+    options = { ...this.options.verify, audience, issuer, jid, ...options }
 
     try {
       return await verifyToken(token, this.secret, options)
