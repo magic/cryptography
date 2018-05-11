@@ -7,9 +7,14 @@ const log = require('@magic/log')
 
 const isValidArg = a => is.string(a) && !is.empty(a)
 
-const transform = (a = '') => is.defined(a) && is.fn(a.toString) ? a.toString() : a
+const transform = (a = '') => is.fn(a.toString) ? a.toString() : a
 
 const compare = async (a, b) => {
+  // cheap exit
+  if (!a || !b) {
+    return false
+  }
+
   let strings = [a, b].map(transform).filter(isValidArg)
   if (strings[0].indexOf('$') !== 0 && strings[1].indexOf('$') === 0) {
     strings = [strings[1], strings[0]]
