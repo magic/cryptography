@@ -41,6 +41,7 @@ module.exports = [
     expect: is.error,
     info: 'Hashing an empty string returns an error',
   },
+  { fn: async () => await hash(123), runs, expect: is.len.eq(hashLength) },
   { fn: async () => await hash(() => {}), runs, expect: is.len.eq(hashLength) },
   {
     fn: async () => [await hash(() => {}), await hash(() => {})],

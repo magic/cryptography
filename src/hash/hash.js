@@ -9,12 +9,33 @@ const defaultOptions = { timeCost: 4, memoryCost: 8192, parallelism: 2, type: ar
 
 const hash = async (val, options = {}) => {
   try {
-    if (is.date(val) || is.function(val)) {
+    if (is.empty(val)) {
+      throw new Error('@magic/cryptography:hash called without valid argument')
+    }
+
+    if (is.date(val)) {
+      val = val.getTime().toString()
+    }
+
+    if (is.function(val)) {
       val = val.toString()
     }
 
-    if (is.empty(val) || !is.string(val)) {
-      throw new Error('genHash called without a string')
+    if (is.regexp(val)) {
+      val = val.toString()
+    }
+
+    if (is.array(val) || is.object(val)) {
+      val = JSON.stringify(val)
+    }
+
+    if (!is.string(val) && is.fn(val.toString)) {
+      val = val.toString()
+    }
+
+    /* istanbul ignore if */
+    if (!is.string(val)) {
+      throw new Error('@magic/cryptography:hash val is not convertable to string')
     }
 
     options = {
