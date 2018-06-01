@@ -1,9 +1,10 @@
-## magic-fs
+## @magic/cryptography
 
 magic cryptography utilities
 
 [![Linux Build Status][travis-image]][travis-url]
 [![Windows Build Status][appveyor-image]][appveyor-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 
 **
   uses magicjs (.mjs) files without compilation.
@@ -16,7 +17,7 @@ magic cryptography utilities
 
 
 ##### jwt
-
+Provides jwts using [jsonwebtoken](https://npmjs.com/package/jsonwebtoken)
 
 ##### random
 Get random values
@@ -79,5 +80,7 @@ List with ~7000 words.
 
 [travis-image]: https://img.shields.io/travis/magic/cryptography/master.svg?label=Linux%20build
 [travis-url]: https://travis-ci.org/magic/cryptography
-[appveyor-image]: https://img.shields.io/appveyor/ci/magic/cryptography/master.svg?label=Windows%20build
-[appveyor-url]: https://ci.appveyor.com/project/magic/cryptography/branch/master
+[appveyor-image]: https://img.shields.io/appveyor/ci/jaeh/cryptography/master.svg?label=Windows%20build
+[appveyor-url]: https://ci.appveyor.com/project/jaeh/cryptography/branch/master
+[coveralls-image]: https://coveralls.io/repos/github/magic/cryptography/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/r/magic/cryptography?branch=master
