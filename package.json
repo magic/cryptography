@@ -9,7 +9,8 @@
     "test:slow": "RUNS=50 t",
     "format": "f -w",
     "format:check": "f",
-    "coveralls": "coveralls"
+    "coveralls": "npm run report | coveralls",
+    "report": "nyc report --reporter=text-lcov"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
