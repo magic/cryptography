@@ -8,7 +8,8 @@
     "test": "t",
     "test:slow": "RUNS=50 t",
     "format": "f -w",
-    "format:check": "f"
+    "format:check": "f",
+    "coveralls": "coveralls"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
