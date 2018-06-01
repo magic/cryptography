@@ -6,10 +6,7 @@ magic cryptography utilities
 [![Windows Build Status][appveyor-image]][appveyor-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
 
-**
-  uses magicjs (.mjs) files without compilation.
-  always use latest node version (or at least node >= 10.0.0).
-**
+**uses magicjs (.mjs) files without compilation. always use latest node version (or at least node >= 10.0.0).**
 
 #### functions:
 
