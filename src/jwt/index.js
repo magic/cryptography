@@ -61,7 +61,7 @@ class JWT {
 
       return await signToken(payload, this.secret, options)
     } catch (e) {
-      log.error(e)
+      // log.error(e)
       return e
     }
   }
@@ -93,7 +93,7 @@ class JWT {
     try {
       return await verifyToken(token, this.secret, options)
     } catch (e) {
-      log.error(e)
+      // log.error(e)
       return e
     }
   }

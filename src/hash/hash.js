@@ -51,7 +51,7 @@ const hash = async (val, options = {}) => {
 
     return hash
   } catch (e) {
-    log.error('genHash:', e)
+    // log.error('genHash:', e)
     return e
   }
 }

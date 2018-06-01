@@ -61,7 +61,7 @@ const randomNumber = async params => {
 
     return Math.min(max, Math.floor(randbytes / maxDec * (max - min + 1) + min + subOnEnd))
   } catch (e) {
-    log.error(e)
+    // log.error(e)
     return e
   }
 }

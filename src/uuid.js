@@ -19,7 +19,7 @@ const addNS = (key, uuid = v4()) => {
   if (!is.string(key)) {
     const msg = `uuid.addNS: expected string as first argument, got: ${key}`
     const err = new Error(msg)
-    log.error(err)
+    // log.error(err)
     return err
   }
 
