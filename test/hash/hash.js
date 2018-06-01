@@ -1,4 +1,4 @@
-const is = require('@magic/types')
+const { is, tryCatch } = require('@magic/test')
 
 const hash = require('../../src/hash')
 
@@ -36,12 +36,12 @@ module.exports = [
     info: `Test if ${runs} await hash${runs > 1 ? 'es are' : ' is'} unique`,
   },
   {
-    fn: async () => await hash(''),
+    fn: tryCatch(hash, ''),
     runs,
     expect: is.error,
     info: 'Hashing an empty string returns an error',
   },
-  { fn: async () => await hash(123), runs, expect: is.len.eq(hashLength) },
+  { fn: async () => await hash(123), runs, expect: is.len.eq(hashLength), info: 'can hash numbers' },
   { fn: async () => await hash(() => {}), runs, expect: is.len.eq(hashLength) },
   {
     fn: async () => [await hash(() => {}), await hash(() => {})],

@@ -13,6 +13,15 @@ const t = async o => {
 
 const time = () => new Date().getTime() / 1000
 
+const tryOut = async a => {
+  try {
+    const signed = await jwt.sign(a)
+    return await jwt.verify(signed)
+  } catch (e) {
+    return e
+  }
+}
+
 module.exports = [
   { fn: t({ t: 't' }), expect: is.object },
   { fn: t({ t: 't' }), expect: t => is.number(t.iat) },
@@ -23,16 +32,16 @@ module.exports = [
   { fn: t('test'), expect: t => is.len.gt(t.exp, time() - 1000) },
   { fn: t('test'), expect: t => is.len.gt(t.exp, t.nbf) },
   {
-    fn: async () => jwt.verify(await jwt.sign({ iss: 'test' })),
+    fn: tryOut({ iss: 'test' }),
     expect: is.error,
     info: 'invalid issuer returns error',
   },
   {
-    fn: async () => jwt.verify(await jwt.sign({ aud: 'test' })),
+    fn: tryOut({ aud: 'test' }),
     expect: is.error,
     info: 'invalid audience returns error',
   },
   { fn: jwt.verify(), expect: false },
   { fn: jwt.verify({ t: 't' }), expect: false },
-  { fn: async () => jwt.verify(await jwt.sign('test')), expect: is.object },
+  { fn: tryOut('test'), expect: is.object },
 ]

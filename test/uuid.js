@@ -1,4 +1,4 @@
-const is = require('@magic/types')
+const { is, tryCatch } = require('@magic/test')
 
 const { uuid } = require('../src')
 
@@ -23,7 +23,7 @@ module.exports = {
       fn: () => uuid.addNS('t', 't920tj22t32-tj2f2f223f23'),
       expect: t => t !== 't920tj22t32-tj2f2f223f23',
     },
-    { fn: () => uuid.addNS(), expect: is.error },
+    { fn: tryCatch(uuid.addNS), expect: is.error },
   ],
   cleanUUID: [
     { fn: () => uuid.cleanUUID('test'), expect: is.uuid },

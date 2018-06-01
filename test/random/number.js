@@ -1,4 +1,4 @@
-const is = require('@magic/types')
+const { is, tryCatch } = require('@magic/test')
 
 const { number } = require('../../src/random')
 
@@ -73,22 +73,22 @@ module.exports = [
     expect: t => t >= 1 && t <= 2,
   },
   {
-    fn: () => number({ min: -5, max: 281474976710655 }),
+    fn: tryCatch(number, { min: -5, max: 281474976710655 }),
     runs,
     expect: is.error,
   },
   {
-    fn: () => number({ min: -5, max: 281474976710655 }),
+    fn: tryCatch(number, { min: -5, max: 281474976710655 }),
     runs,
     expect: e => e.message.indexOf('Distance is greater than 256^6-1') === 0,
   },
   { fn: () => UNSAFE_INTEGER, expect: t => t > Number.MAX_SAFE_INTEGER },
   {
-    fn: () => number({ min: 32000323, max: UNSAFE_INTEGER }),
+    fn: tryCatch(number, { min: 32000323, max: UNSAFE_INTEGER }),
     expect: is.error,
   },
   {
-    fn: () => number({ min: 32000323, max: UNSAFE_INTEGER }),
+    fn: tryCatch(number, { min: 32000323, max: UNSAFE_INTEGER }),
     expect: e => e.message.indexOf('Max number should be Number.MAX_SAFE_INTEGER') > -1,
   },
   // numbers will not equal each other
