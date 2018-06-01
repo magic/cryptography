@@ -36,5 +36,5 @@ install:
 script:
   - npm run test
 
-# after_success:
-  - npm run coveralls
+after_success:
+  - npm run coveralls -v
