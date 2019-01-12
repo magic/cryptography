@@ -16,12 +16,12 @@
   "dependencies": {
     "@magic/log": "github:magic/log",
     "@magic/types": "github:magic/types",
-    "argon2": "0.19.3",
-    "jsonwebtoken": "8.2.2",
-    "uuid": "3.2.1"
+    "argon2": "0.20.0",
+    "jsonwebtoken": "8.4.0",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
     "@magic/test": "github:magic/test",
-    "coveralls": "3.0.1"
+    "coveralls": "3.0.2"
   }
 }
