@@ -9,19 +9,19 @@
     "test:slow": "RUNS=50 t",
     "format": "f -w",
     "format:check": "f",
-    "coveralls": "npm run report | coveralls",
-    "report": "nyc report --reporter=text-lcov"
+    "report": "nyc report --reporter=text-lcov",
+    "calls": "calls"
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
     "@magic/log": "0.0.2",
     "@magic/types": "0.0.3",
-    "argon2": "0.20.1",
-    "jsonwebtoken": "8.4.0",
+    "argon2": "0.21.0",
+    "jsonwebtoken": "8.5.1",
     "uuid": "3.3.2"
   },
   "devDependencies": {
-    "@magic/test": "0.0.4",
-    "coveralls": "3.0.2"
+    "@magic/test": "0.0.7",
+    "coveralls": "3.0.3"
   }
 }
