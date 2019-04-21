@@ -1,5 +1,7 @@
 ## @magic/cryptography
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/magic/cryptography.svg)](https://greenkeeper.io/)
+
 magic cryptography utilities
 
 [![Linux Build Status][travis-image]][travis-url]
