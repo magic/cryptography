@@ -6,9 +6,6 @@ magic cryptography utilities
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![Greenkeeper badge](https://badges.greenkeeper.io/magic/cryptography.svg)](https://greenkeeper.io/)
 
-
-**uses magicjs (.mjs) files without compilation. always use latest node version (or at least node >= 10.0.0).**
-
 #### functions:
 
 ##### hash
