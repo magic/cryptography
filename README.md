@@ -1,10 +1,25 @@
 ## @magic/cryptography
 magic cryptography utilities
 
+[![NPM version][npm-image]][npm-url]
 [![Linux Build Status][travis-image]][travis-url]
 [![Windows Build Status][appveyor-image]][appveyor-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
-[![Greenkeeper badge](https://badges.greenkeeper.io/magic/cryptography.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+
+[npm-image]: https://img.shields.io/npm/v/@magic/cryptography.svg
+[npm-url]: https://www.npmjs.com/package/@magic/cryptography
+[travis-image]: https://api.travis-ci.org/magic/cryptography.svg?branch=master
+[travis-url]: https://travis-ci.org/magic/cryptography
+[appveyor-image]: https://img.shields.io/appveyor/ci/jaeh/cryptography/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/jaeh/cryptography/branch/master
+[coveralls-image]: https://coveralls.io/repos/github/magic/cryptography/badge.svg
+[coveralls-url]: https://coveralls.io/github/magic/cryptography
+[greenkeeper-image]: https://badges.greenkeeper.io/magic/cryptography.svg
+[greenkeeper-url]: https://badges.greenkeeper.io/magic/cryptography.svg
+[snyk-image]: https://snyk.io/test/github/magic/cryptography/badge.svg
+[snyk-url]: https://snyk.io/test/github/magic/cryptography
 
 #### functions:
 
@@ -71,11 +86,3 @@ Get multiple random words from the wordlist
 
 ##### wordlist
 List with ~7000 words.
-
-
-[travis-image]: https://img.shields.io/travis/magic/cryptography/master.svg?label=Linux%20build
-[travis-url]: https://travis-ci.org/magic/cryptography
-[appveyor-image]: https://img.shields.io/appveyor/ci/jaeh/cryptography/master.svg?label=Windows%20build
-[appveyor-url]: https://ci.appveyor.com/project/jaeh/cryptography/branch/master
-[coveralls-image]: https://coveralls.io/repos/github/magic/cryptography/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/r/magic/cryptography?branch=master
