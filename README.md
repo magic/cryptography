@@ -12,8 +12,8 @@ magic cryptography utilities
 [npm-url]: https://www.npmjs.com/package/@magic/cryptography
 [travis-image]: https://api.travis-ci.org/magic/cryptography.svg?branch=master
 [travis-url]: https://travis-ci.org/magic/cryptography
-[appveyor-image]: https://img.shields.io/appveyor/ci/jaeh/cryptography/master.svg
-[appveyor-url]: https://ci.appveyor.com/project/jaeh/cryptography/branch/master
+[appveyor-image]: https://img.shields.io/appveyor/ci/magic/cryptography/master.svg
+[appveyor-url]: https://ci.appveyor.com/project/magic/cryptography/branch/master
 [coveralls-image]: https://coveralls.io/repos/github/magic/cryptography/badge.svg
 [coveralls-url]: https://coveralls.io/github/magic/cryptography
 [greenkeeper-image]: https://badges.greenkeeper.io/magic/cryptography.svg
