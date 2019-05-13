@@ -1,6 +1,6 @@
 {
   "name": "@magic/cryptography",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cryptographic primitives. Uses sane defaults.",
   "main": "src/index.js",
   "scripts": {
