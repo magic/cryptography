@@ -1,13 +1,13 @@
-const { promisify } = require('util')
+import { promisify } from 'util'
 
-const argon2 = require('argon2')
+import argon2 from 'argon2'
 
-const is = require('@magic/types')
-const log = require('@magic/log')
+import is from '@magic/types'
+import log from '@magic/log'
 
-const isValidArg = a => is.string(a)
+export const isValidArg = a => is.string(a)
 
-const transform = a => {
+export const transform = a => {
   if (is.date(a)) {
     return a.getTime().toString()
   } else if (is.regexp(a)) {
@@ -23,7 +23,7 @@ const transform = a => {
   }
 }
 
-const compare = async (a, b) => {
+export const compare = async (a, b) => {
   // cheap exit
   if (is.empty(a) || is.empty(b)) {
     return false
@@ -43,4 +43,4 @@ const compare = async (a, b) => {
   return await argon2.verify(...strings)
 }
 
-module.exports = compare
+export default compare

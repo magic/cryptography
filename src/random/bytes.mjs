@@ -1,9 +1,9 @@
-const crypto = require('crypto')
-const is = require('@magic/types')
+import crypto from 'crypto'
+import is from '@magic/types'
 
 const byteDefault = 33
 
-const randomBytes = byte =>
+export const bytes = byte =>
   new Promise((resolve, reject) => {
     byte = parseInt(byte, 10)
     if (!is.number(byte)) {
@@ -20,4 +20,4 @@ const randomBytes = byte =>
     })
   })
 
-module.exports = randomBytes
+export default bytes

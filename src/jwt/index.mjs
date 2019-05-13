@@ -1,12 +1,12 @@
-const is = require('@magic/types')
-const log = require('@magic/log')
+import is from '@magic/types'
+import log from '@magic/log'
 
-const { v4 } = require('../uuid')
-const { bytes } = require('../random')
+import { v4 } from '../uuid.mjs'
+import { bytes } from '../random/index.mjs'
 
-const { promisify } = require('util')
+import { promisify } from 'util'
 
-const jwt = require('jsonwebtoken')
+import jwt from 'jsonwebtoken'
 
 const signToken = promisify(jwt.sign)
 const verifyToken = promisify(jwt.verify)
@@ -32,7 +32,7 @@ let state = {
 
 const signable = t => [is.str, is.num, is.date, is.array].some(f => f(t))
 
-class JWT {
+export class JWT {
   constructor(args = {}, options = {}) {
     this.payload = { ...state.payload, ...args }
     this.options = {
@@ -99,4 +99,4 @@ class JWT {
   }
 }
 
-module.exports = JWT
+export default JWT

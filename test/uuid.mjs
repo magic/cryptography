@@ -1,12 +1,12 @@
-const { is, tryCatch } = require('@magic/test')
+import { is, tryCatch } from '@magic/test'
 
-const { uuid } = require('../src')
+import { uuid } from '../src/index.mjs'
 
 const { DNS } = uuid.v5
 
 const runs = process.env.TESTRUNS || 1
 
-module.exports = {
+export default {
   v4: [
     { fn: () => uuid.v4(), runs, expect: t => t !== uuid.v4() },
     { fn: () => uuid.v4(), runs, expect: is.uuid },

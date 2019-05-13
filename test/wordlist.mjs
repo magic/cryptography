@@ -1,8 +1,8 @@
-const { isString, isEmpty } = require('@magic/types')
+import { isString, isEmpty } from '@magic/types'
 
-const wordlist = require('../src/wordlist')
+import wordlist from '../src/wordlist.mjs'
 
-module.exports = [
+export default [
   { fn: () => wordlist.length, expect: 7776, info: 'test for wordlist length' },
   {
     fn: () => wordlist.length,

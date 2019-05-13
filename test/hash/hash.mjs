@@ -1,12 +1,12 @@
-const { is, tryCatch } = require('@magic/test')
+import { is, tryCatch } from '@magic/test'
 
-const hash = require('../../src/hash')
+import hash from '../../src/hash/index.mjs'
 
 const runs = process.env.RUNS || 1
 
 const hashLength = 95
 
-module.exports = [
+export default [
   {
     fn: async () => await hash('test'),
     runs,

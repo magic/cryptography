@@ -1,9 +1,9 @@
-const is = require('@magic/types')
-const words = require('../src/words')
+import is from '@magic/types'
+import words from '../src/words.mjs'
 
 const runs = process.env.RUNS || 1
 
-module.exports = [
+export default [
   {
     fn: async () => await words(12),
     runs,

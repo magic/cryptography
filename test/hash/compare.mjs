@@ -1,12 +1,12 @@
-const is = require('@magic/types')
+import is from '@magic/types'
 
-const hash = require('../../src/hash')
+import hash from '../../src/hash/index.mjs'
 
 const runs = process.env.RUNS || 1
 
 const fn = () => {}
 
-module.exports = [
+export default [
   {
     fn: async () => await hash.compare(await hash('test'), 'test'),
     runs,

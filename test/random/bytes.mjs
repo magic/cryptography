@@ -1,10 +1,10 @@
-const is = require('@magic/types')
+import is from '@magic/types'
 
-const { bytes } = require('../../src/random')
+import { bytes } from '../../src/random/index.mjs'
 
 const runs = process.env.RUNS || 1
 
-module.exports = [
+export default [
   { fn: async () => (await bytes()) !== (await bytes()) },
   { fn: async () => await bytes(), runs, expect: is.string },
   { fn: async () => await bytes(), runs, expect: is.len.equal(66) },

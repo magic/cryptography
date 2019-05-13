@@ -1,4 +1,4 @@
-module.exports = [
+export const wordlist = [
   'abacus',
   'abdomen',
   'abdominal',
@@ -7776,3 +7776,5 @@ module.exports = [
   'zoology',
   'zoom',
 ]
+
+export default wordlist

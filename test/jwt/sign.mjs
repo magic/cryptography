@@ -1,6 +1,6 @@
-const { is, tryCatch } = require('@magic/test')
+import { is, tryCatch } from '@magic/test'
 
-const JWT = require('../../src/jwt')
+import JWT from '../../src/jwt/index.mjs'
 
 const jwt = new JWT()
 
@@ -28,7 +28,7 @@ const tryOut = async a => {
   }
 }
 
-module.exports = [
+export default [
   { fn: jwt.sign({ t: 't' }), expect: is.len.lt(200) },
   // not working now :(
   // { fn: compareJwt({ t: 't' }, { t: 't' }), expect: ([a], [b]) => a === b },

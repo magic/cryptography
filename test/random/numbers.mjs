@@ -1,8 +1,8 @@
-const is = require('@magic/types')
+import is from '@magic/types'
 
-const { numbers } = require('../../src/random')
+import { numbers } from '../../src/random/index.mjs'
 
-module.exports = [
+export default [
   { fn: async () => await numbers(1), expect: is.len.eq(1) },
   { fn: async () => await numbers(1), expect: is.array },
   { fn: async () => await numbers(10), expect: is.len.eq(10) },

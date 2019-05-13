@@ -1,12 +1,12 @@
-const { is } = require('@magic/test')
+import { is } from '@magic/test'
 
-const JWT = require('../../src/jwt')
+import JWT from '../../src/jwt/index.mjs'
 
 const jwt = new JWT()
 
 const exp = Math.floor(new Date().getTime() / 1000 + 1000)
 
-module.exports = [
+export default [
   { fn: jwt.object({ t: 't' }), expect: is.object },
   { fn: jwt.object({ t: 't' }), expect: t => Object.keys(t).indexOf('t') > -1 },
   { fn: jwt.object({ t: 't' }), expect: t => t.t === 't' },

@@ -1,13 +1,11 @@
-const crypto = require('crypto')
-
-const log = require('@magic/log')
+import crypto from 'crypto'
 
 const defaultArgs = {
   min: 0,
   max: 281474976710654,
 }
 
-const randomNumber = async params => {
+export const number = async params => {
   try {
     const options = Object.assign({}, defaultArgs, params)
     let { min, max } = options
@@ -66,4 +64,4 @@ const randomNumber = async params => {
   }
 }
 
-module.exports = randomNumber
+export default number

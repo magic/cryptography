@@ -1,13 +1,10 @@
-const { promisify } = require('util')
+import argon2 from 'argon2'
 
-const argon2 = require('argon2')
-
-const is = require('@magic/types')
-const log = require('@magic/log')
+import is from '@magic/types'
 
 const defaultOptions = { timeCost: 4, memoryCost: 8192, parallelism: 2, type: argon2.argon2d }
 
-const hash = async (val, options = {}) => {
+export const hash = async (val, options = {}) => {
   try {
     if (is.empty(val)) {
       throw new Error('@magic/cryptography:hash called without valid argument')
@@ -56,4 +53,4 @@ const hash = async (val, options = {}) => {
   }
 }
 
-module.exports = hash
+export default hash

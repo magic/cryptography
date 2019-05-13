@@ -1,6 +1,6 @@
-const { is } = require('@magic/test')
+import { is } from '@magic/test'
 
-const JWT = require('../../src/jwt')
+import JWT from '../../src/jwt/index.mjs'
 
 const payload = {
   exp: '24h',
@@ -19,7 +19,7 @@ const options = {
 
 const time = () => new Date().getTime() / 1000
 
-module.exports = [
+export default [
   { fn: new JWT(), expect: is.object },
   { fn: new JWT(), expect: t => is.object(t.payload) },
   { fn: new JWT(), expect: t => is.object(t.options) },

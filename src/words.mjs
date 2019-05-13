@@ -1,9 +1,9 @@
-const is = require('@magic/types')
+import is from '@magic/types'
 
-const range = require('./range')
-const word = require('./word')
+import { range } from './range.mjs'
+import { word } from './word.mjs'
 
-const randomWords = async (count = 1) => {
+export const words = async (count = 1) => {
   if (!is.number(count)) {
     count = 1
   } else if (count < 1) {
@@ -19,4 +19,4 @@ const randomWords = async (count = 1) => {
   return Array.from(words)
 }
 
-module.exports = randomWords
+export default words

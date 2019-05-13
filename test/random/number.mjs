@@ -1,6 +1,6 @@
-const { is, tryCatch } = require('@magic/test')
+import { is, tryCatch } from '@magic/test'
 
-const { number } = require('../../src/random')
+import { number } from '../../src/random/index.mjs'
 
 const runs = process.env.RUNS || 1
 
@@ -8,7 +8,7 @@ const numbers = []
 
 const UNSAFE_INTEGER = Number.MAX_SAFE_INTEGER + 1
 
-module.exports = [
+export default [
   { fn: () => number({ max: 1 }), runs, expect: t => t >= 0 },
   { fn: () => number({ max: 1 }), runs, expect: t => t <= 1 },
   // numbers stay in chosen bounds

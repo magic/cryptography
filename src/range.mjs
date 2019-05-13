@@ -1,4 +1,4 @@
-const range = (x, y = 1) => {
+export const range = (x, y = 1) => {
   if (x > y) {
     return range(y, x).reverse()
   }
@@ -10,4 +10,4 @@ const range = (x, y = 1) => {
   return [x, ...range(x + 1, y)]
 }
 
-module.exports = range
+export default range

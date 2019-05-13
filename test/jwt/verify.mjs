@@ -1,6 +1,6 @@
-const { is } = require('@magic/test')
+import { is } from '@magic/test'
 
-const JWT = require('../../src/jwt')
+import JWT from '../../src/jwt/index.mjs'
 
 const jwt = new JWT()
 
@@ -22,7 +22,7 @@ const tryOut = async a => {
   }
 }
 
-module.exports = [
+export default [
   { fn: t({ t: 't' }), expect: is.object },
   { fn: t({ t: 't' }), expect: t => is.number(t.iat) },
   { fn: t({ t: 't' }), expect: t => is.string(t.t) },
