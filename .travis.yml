@@ -12,7 +12,7 @@ branches:
 
 env:
   matrix:
-    - NODE_VERSION="10"
+    - NODE_VERSION="12"
 
 matrix:
   fast_finish: true
