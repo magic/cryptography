@@ -21,6 +21,6 @@
     "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@magic/test": "0.1.14"
+    "@magic/test": "0.1.15"
   }
 }
