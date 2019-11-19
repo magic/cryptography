@@ -14,7 +14,7 @@
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
-    "@magic/log": "0.1.0",
+    "@magic/log": "0.1.1",
     "@magic/types": "0.1.2",
     "argon2": "0.24.1",
     "jsonwebtoken": "8.5.1",
