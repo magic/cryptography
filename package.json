@@ -14,13 +14,13 @@
   },
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
-    "@magic/log": "0.1.1",
+    "@magic/log": "0.1.2",
     "@magic/types": "0.1.2",
     "argon2": "0.25.1",
     "jsonwebtoken": "8.5.1",
     "uuid": "3.3.3"
   },
   "devDependencies": {
-    "@magic/test": "0.1.21"
+    "@magic/test": "0.1.23"
   }
 }
