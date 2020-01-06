@@ -1,7 +1,8 @@
 {
   "name": "@magic/cryptography",
-  "version": "0.1.0",
-  "description": "Cryptographic primitives. Uses sane defaults.",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Cryptographic primitives. Uses sane defaults. Do not use.",
   "main": "src/index.js",
   "scripts": {
     "start": "t -p",
@@ -12,6 +13,10 @@
     "report": "nyc report --reporter=text-lcov",
     "calls": "calls"
   },
+  "engines": {
+    "node": ">=13.5.0"
+  },
+  "engineStrict": true,
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
     "@magic/log": "0.1.2",
