@@ -1,6 +1,8 @@
 ## @magic/cryptography
 magic cryptography utilities
 
+not in use anywhere. do not use.
+
 [![NPM version][npm-image]][npm-url]
 [![Linux Build Status][travis-image]][travis-url]
 [![Windows Build Status][appveyor-image]][appveyor-url]
@@ -86,3 +88,8 @@ Get multiple random words from the wordlist
 
 ##### wordlist
 List with ~7000 words.
+
+#### changelog
+
+##### 0.0.1 - UNRELEASED
+first release
