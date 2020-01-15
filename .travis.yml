@@ -1,40 +1,27 @@
-language: cpp
+language: node_js
+
+node_js:
+  - "13.5.0"
+
+cache: npm
 
 os:
   - linux
   - osx
 
-# don't re-build for tags so that [publish binary] is not re-run
-# https://github.com/travis-ci/travis-ci/issues/1532
-branches:
-  except:
-    - /^v[0-9]/
-
 env:
   matrix:
-    - NODE_VERSION="12"
+    - NODE_VERSION="13"
 
 matrix:
   fast_finish: true
 
-sudo: false
-
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-
-before_install:
-  - rm -rf ~/.nvm/ && git clone --depth 1 https://github.com/creationix/nvm.git ~/.nvm
-  - source ~/.nvm/nvm.sh
-  - nvm install $NODE_VERSION
-  - nvm use $NODE_VERSION
-
 install:
   - npm install
+  - npm link
 
 script:
-  - npm run test
+  - npm test
 
 after_success:
-  - npm run coveralls
+  - npm run calls
