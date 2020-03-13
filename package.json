@@ -23,7 +23,7 @@
     "@magic/types": "0.1.9",
     "argon2": "0.25.1",
     "jsonwebtoken": "8.5.1",
-    "uuid": "3.3.3"
+    "uuid": "3.4.0"
   },
   "devDependencies": {
     "@magic/test": "0.1.32"
