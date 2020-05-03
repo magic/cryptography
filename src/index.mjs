@@ -8,4 +8,3 @@ export { wordlist } from './wordlist.mjs'
 
 export const random = ran
 export const uuid = u
-

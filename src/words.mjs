@@ -1,6 +1,5 @@
 import is from '@magic/types'
 
-import { range } from './range.mjs'
 import { word } from './word.mjs'
 
 export const words = async (count = 1) => {
