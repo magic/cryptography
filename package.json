@@ -26,6 +26,7 @@
     "uuid": "8.0.0"
   },
   "devDependencies": {
+    "@magic/format": "0.0.10",
     "@magic/test": "0.1.45"
   }
 }
