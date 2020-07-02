@@ -14,19 +14,19 @@
     "calls": "calls"
   },
   "engines": {
-    "node": ">=13.5.0"
+    "node": ">=14.2.0"
   },
   "engineStrict": true,
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
-    "@magic/log": "0.1.4",
-    "@magic/types": "0.1.11",
+    "@magic/log": "0.1.5",
+    "@magic/types": "0.1.12",
     "argon2": "0.26.2",
     "jsonwebtoken": "8.5.1",
-    "uuid": "8.0.0"
+    "uuid": "8.2.0"
   },
   "devDependencies": {
-    "@magic/format": "0.0.10",
-    "@magic/test": "0.1.45"
+    "@magic/format": "0.0.11",
+    "@magic/test": "0.1.50"
   }
 }
