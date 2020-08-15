@@ -21,7 +21,7 @@
   "dependencies": {
     "@magic/log": "0.1.5",
     "@magic/types": "0.1.12",
-    "argon2": "0.26.2",
+    "argon2": "0.27.0",
     "jsonwebtoken": "8.5.1",
     "uuid": "8.2.0"
   },
