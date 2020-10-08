@@ -19,7 +19,7 @@
   "engineStrict": true,
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
-    "@magic/log": "0.1.5",
+    "@magic/log": "0.1.6",
     "@magic/types": "0.1.13",
     "argon2": "0.27.0",
     "jsonwebtoken": "8.5.1",
