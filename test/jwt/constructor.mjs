@@ -17,7 +17,7 @@ const options = {
   },
 }
 
-const time = () => parseInt((Math.floor(new Date().getTime() / 1000)))
+const time = () => parseInt(Math.floor(new Date().getTime() / 1000))
 
 export default [
   { fn: new JWT(), expect: is.object },

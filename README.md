@@ -1,4 +1,5 @@
 ## @magic/cryptography
+
 magic cryptography utilities
 
 not in use anywhere. do not use.
@@ -27,12 +28,14 @@ not in use anywhere. do not use.
 
 ##### hash
 
-
 ##### jwt
+
 Provides jwts using [jsonwebtoken](https://npmjs.com/package/jsonwebtoken)
 
 ##### random
+
 Get random values
+
 ```javascript
   import { random } from '@magic/cryptography'
 
@@ -50,46 +53,53 @@ Get random values
 ```
 
 ##### uuid
+
 Generate v4 and (namespaced) v5 uuids using the [uuid](https://npmjs.com/package/uuid) package
+
 ```javascript
-  import { uuid } from '@magic/cryptography'
+import { uuid } from '@magic/cryptography'
 
-  const v4 = uuid.v4()
+const v4 = uuid.v4()
 
-  // uuid v5 namespaces
-  const { DNS, URL, OID, X500 } = uuid.v5
+// uuid v5 namespaces
+const { DNS, URL, OID, X500 } = uuid.v5
 
-  const namespaceUuid = uuid.addNS('name')
-  const v5 = uuid.v5(namespaceUuid || 'name', DNS)
+const namespaceUuid = uuid.addNS('name')
+const v5 = uuid.v5(namespaceUuid || 'name', DNS)
 ```
 
 ##### word
-Get a single random word from the wordlist
-```javascript
-  import { word } from '@magic/cryptography'
 
-  const generateWord = async () => {
-    const randomWord = await word()
-    return randomWord
-  }
-  generateWord()
+Get a single random word from the wordlist
+
+```javascript
+import { word } from '@magic/cryptography'
+
+const generateWord = async () => {
+  const randomWord = await word()
+  return randomWord
+}
+generateWord()
 ```
 
-
 ##### words
+
 Get multiple random words from the wordlist
+
 ```javascript
-  const generateWords = async () => {
-    const randomWords = await words(10)
-    return randomWords
-  }
-  generateWords()
+const generateWords = async () => {
+  const randomWords = await words(10)
+  return randomWords
+}
+generateWords()
 ```
 
 ##### wordlist
+
 List with ~7000 words.
 
 #### changelog
 
 ##### 0.0.1 - UNRELEASED
+
 first release
