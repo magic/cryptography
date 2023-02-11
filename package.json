@@ -19,14 +19,14 @@
   "engineStrict": true,
   "author": "Jascha Ehrenreich <jascha@jaeh.at>",
   "dependencies": {
-    "@magic/log": "0.1.10",
-    "@magic/types": "0.1.16",
-    "argon2": "0.28.2",
-    "jsonwebtoken": "8.5.1",
-    "uuid": "8.3.2"
+    "@magic/log": "0.1.17",
+    "@magic/types": "0.1.22",
+    "argon2": "0.30.3",
+    "jsonwebtoken": "9.0.0",
+    "uuid": "9.0.0"
   },
   "devDependencies": {
-    "@magic/format": "0.0.31",
-    "@magic/test": "0.1.76"
+    "@magic/format": "0.0.49",
+    "@magic/test": "0.2.14"
   }
 }
